@@ -1,0 +1,341 @@
+/* FONTS */
+/* inter-300 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  src: url('./assets/fonts/inter-v12-latin-300.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
+       url('./assets/fonts/inter-v12-latin-300.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* inter-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/fonts/inter-v12-latin-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
+       url('./assets/fonts/inter-v12-latin-regular.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* inter-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./assets/fonts/inter-v12-latin-700.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
+       url('./assets/fonts/inter-v12-latin-700.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+
+/* RESET */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+
+/* CUSTOM PROPERTIES */
+:root {
+
+    --primary-clr: #e7e247;
+    --secondary-clr: hsl(274, 48%, 41%);
+    --secondary-clr-attenuated: hsla(274, 48%, 41%, 15%);
+    --background-clr: #333a5c;
+    --background-clr-form: #07090f;
+    --body-clr: #F0F0F0;
+    --body-clr-placeholders: hsla(0, 0%, 94%, 75%);
+    --error-clr: #FB3E3E;
+
+    --site-wrapper: 1440px;
+    --content-width: 1110px;
+    --m-lr: max(max(1.5rem, 4%), 50% - var(--content-width) / 2);
+
+    --ff: 'Inter', sans-serif;
+
+    --fs-h-s: 1.625rem;
+    --fs-h-m: 3rem;
+    --fs-h-l: 3.25rem;
+
+    --fs-b-s: 0.938rem;
+    --fs-b-m: 1.125rem;
+
+    --fw-h: 100;
+    --fw-b: 100;
+    --fw-form: 700;
+
+    --br: 5px;
+
+
+    --fs-body: var(--fs-b-s);
+    --fs-header: var(--fs-h-s);
+    --fs-input: 0.875rem;
+}
+
+
+@media screen and (min-width: 568px) {
+
+    :root {
+        --fs-header: var(--fs-h-m);
+        --fs-body: var(--fs-b-m);
+    }
+
+} 
+
+/* SITE LAYOUT & GLOBAL STYLE */
+body {
+    font-family: var(--ff);
+    color: var(--body-clr);
+    background-color: var(--background-clr-form);
+    min-height: 100vh;
+}
+
+header {
+    margin-top: 130px;
+    font-size: 18px;
+}
+
+aside {
+    display: none;
+    background-color: var(--primary-clr);
+}
+
+main {
+    max-width: 730px;
+    margin: 0 auto;
+    padding: 0 17px;
+}
+
+/* form { */
+/*     background-color: var(--background-clr-form); */
+/*     border: var(--br); */
+/*     padding: 57px; */
+/* } */
+
+a {
+    color: inherit;
+}
+
+a:hover, 
+a:focus {
+    color: var(--secondary-clr);
+}
+a:visited {
+    color: inherit;
+}
+
+.form-header {
+    font-size: 1.125rem;
+    margin-top: 75px;
+}
+
+.form-header h1 {
+    font-size: 40px;
+    margin-top: 14px;
+}
+
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    letter-spacing: 0.07em;
+    margin-top: 35px;
+}
+
+.form-cell {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 17px;
+}
+
+.form-cell input[type="text"], 
+.form-cell input[type="email"],
+.form-cell input[type="tel"], 
+.form-cell input[type="password"],
+.form-cell textarea, 
+.form-cell select {
+    border: none;
+    background-color: var(--secondary-clr-attenuated);
+    color: var(--secondary-clr);
+    font-weight: 700;
+    padding: 17px 27px;
+    border-radius: var(--br);
+}
+
+.form-cell select {
+    height: 58px;
+}
+
+.form-cell input[type="text"]:focus,
+.form-cell input[type="email"]:focus,
+.form-cell input[type="tel"]:focus,
+.form-cell input[type="password"]:focus,
+.form-cell textarea:focus,
+.form-cell select:focus {
+    outline: 2px solid var(--secondary-clr);
+}
+
+.form-cell input[type="text"]::placeholder,
+.form-cell input[type="email"]::placeholder,
+.form-cell input[type="tel"]::placeholder,
+.form-cell input[type="password"]::placeholder,
+.form-cell textarea::placeholder,
+.form-cell select::placeholder {
+    color: var(--body-clr-placeholders);
+}
+
+.form-cell-checkbox {
+    display: flex;
+    gap: 17px;
+}
+
+.form-cell-checkbox input[type="checkbox"] {
+    appearance: none;
+    position: relative;
+    margin: 0;
+    flex: 1 0 auto;
+    background-color: var(--secondary-clr-attenuated);
+    width: 27px;
+    height: 27px;
+    border-radius: var(--br);
+    color: var(--secondary-clr);
+}
+
+.form-cell-checkbox input[type="checkbox"]:checked {
+    outline: 2px solid var(--secondary-clr);
+}
+.form-cell-checkbox input[type="checkbox"]:checked::before {
+    display: flex;
+    position: absolute;
+    content: "✔";
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+}
+
+.form-cell label {
+    font-size: 20px;
+    line-height: 1;
+    padding-left: var(--br);
+}
+
+form button[type="submit"] {
+    background: var(--primary-clr);
+    border: none;
+    border-radius: var(--br);
+    color: var(--background-clr-form);
+    font-weight: 700;
+    padding: 17px;
+    margin-top: 21px;
+    cursor: pointer;
+}
+
+form button[type="submit"]:hover,
+form button[type="submit"]:focus {
+    background-color: #efeb81;
+}
+
+.login {
+    margin-top: 27px;
+}
+
+
+@media screen and (min-width: 568px) {
+    body {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+    
+    aside {
+        display: block;
+    }
+
+    .form-header {
+        max-width: 70%;
+    }
+}
+
