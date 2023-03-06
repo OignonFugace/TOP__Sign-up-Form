@@ -9,56 +9,60 @@
 <body>
     <aside></aside> 
     <main>
-        <header>
-            <p>This is a demo registration page! You know you need something like this in your life to help you realize your deepest dreams. Sign up now to get started. </p>
-            <p>You know you want to.</p>
-        </header>
         <form action="">
             <header class="form-header">
+                <p>This is a demo registration page! You know you need something like this in your life to help you realize your deepest dreams. Sign up now to get started. </p>
+                <p>You know you want to.</p>
                 <h1>Let's do this!</h1>
             </header>
-
+        
             <section class="contact-form">
-
+        
                 <div class="form-row">
                     <div class="form-cell">
                         <label for="firstName">FIRST NAME*</label>
-                        <input type="text" name="firstName" id="firstName" placeholder="Rachel" required>
+                        <input type="text" name="firstName" id="firstName" placeholder="Rachel" maxlength="50" required>
+                        <span class="error-message">Invalid</span>
                     </div>
                     <div class="form-cell">
                         <label for="lastName">LAST NAME*</label>
-                        <input type="text" name="lastName" id="lastName" placeholder="Joe" required>
+                        <input type="text" name="lastName" id="lastName" placeholder="Joe" maxlength="50" required>
+                        <span class="error-message">Invalid</span>
                     </div>
                 </div>
-
+        
                 <div class="form-row">
                     <div class="form-cell">
                         <label for="email">EMAIL*</label>
                         <input type="email" name="email" id="email" placeholder="rachel@domain.com" required>
+                        <span class="error-message">Please enter a valid email address</span>
                     </div>
                     <div class="form-cell">
                         <label for="contactPhone">PHONE NUMBER</label>
                         <input type="tel" name="contactPhone" id="contactPhone" placeholder="-- -- -- -- --">
+                        <span class="error-message">Invalid</span>
                     </div>
                 </div>
-
+        
                 <div class="form-row">
                     <div class="form-cell">
-                        <label for="pasword">PASSWORD</label>
-                        <input type="password" name="password" id="pasword">
+                        <label for="password">PASSWORD*</label>
+                        <input type="password" name="password" id="password" placeholder="Must have at least 6 characters" minlength="6" required>
+                        <span class="error-message">Invalid</span>
                     </div>
                     <div class="form-cell">
-                        <label for="paswordConfirm">CONFIRM PASSWORD</label>
-                        <input type="password" name="passwordConfirm" id="paswordConfirm">
+                        <label for="passwordConfirm">CONFIRM PASSWORD*</label>
+                        <input type="password" name="passwordConfirm" id="passwordConfirm" placeholder="Must have at least 6 characters" minlength="6" required>
+                        <span class="error-message">Invalid</span>
                     </div>
                 </div>
-
+        
                 <button type="submit">CREATE ACCOUNT</button>
-
+        
+                <p class="login">Already have an account? <a href="#">Log in</a></p>
             </section>
         </form>
         
-        <p class="login">Already have an account? <a href="#">Log in</a></p>
     </main>
     
 </body>
